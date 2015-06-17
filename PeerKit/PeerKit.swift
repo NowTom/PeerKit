@@ -37,6 +37,7 @@ public let myName = NSHost.currentHost().localizedName ?? ""
 
 public var transceiver = Transceiver(displayName: myName)
 public var session: MCSession?
+private var serviceType: String?
 
 // MARK: Event Handling
 
@@ -65,6 +66,8 @@ func didDisconnect(myPeerID: MCPeerID, peer: MCPeerID) {
             onDisconnect(myPeerID: myPeerID, peerID: peer)
         }
     }
+    PeerKit.stopTransceiving()
+    PeerKit.transceive(PeerKit.serviceType!, discoveryInfo: nil)
 }
 
 func didReceiveData(data: NSData, fromPeer peer: MCPeerID) {
