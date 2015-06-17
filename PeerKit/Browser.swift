@@ -34,7 +34,7 @@ class Browser: NSObject, MCNearbyServiceBrowserDelegate {
     }
 
     func browser(browser: MCNearbyServiceBrowser!, foundPeer peerID: MCPeerID!, withDiscoveryInfo info: [NSObject : AnyObject]!) {
-        browser.invitePeer(peerID, toSession: mcSession, withContext: nil, timeout: 30)
+        browser.invitePeer(peerID, toSession: mcSession, withContext: nil, timeout: 0)
     }
 
     func browser(browser: MCNearbyServiceBrowser!, lostPeer peerID: MCPeerID!) {

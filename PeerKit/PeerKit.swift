@@ -66,8 +66,6 @@ func didDisconnect(myPeerID: MCPeerID, peer: MCPeerID) {
             onDisconnect(myPeerID: myPeerID, peerID: peer)
         }
     }
-    PeerKit.stopTransceiving()
-    PeerKit.transceive(PeerKit.serviceType!, discoveryInfo: nil)
 }
 
 func didReceiveData(data: NSData, fromPeer peer: MCPeerID) {
